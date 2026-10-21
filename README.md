@@ -74,6 +74,15 @@ CONFIG = {
 Initialize & Select Universe: Run Cells 1 through 18. Cell 18 will validate your stock universe (e.g., NVDA, TSLA, AAPL) against the active data provider.
 
 ### Images
+<img width="1078" height="763" alt="Image" src="https://github.com/user-attachments/assets/7d93040e-1a2e-416d-a98a-c4508fcf4f36" />
+
+<img width="840" height="471" alt="Image" src="https://github.com/user-attachments/assets/2b188634-8fb7-4ce3-ae34-92869609c54c" />
+
+<img width="1301" height="528" alt="Image" src="https://github.com/user-attachments/assets/a28f280c-a8cd-4a40-afe4-4d04f2d125ce" />
+
+<img width="1233" height="691" alt="Image" src="https://github.com/user-attachments/assets/c879484c-36cc-4a5a-96c8-611cb760f544" />
+
+<img width="840" height="270" alt="Image" src="https://github.com/user-attachments/assets/aba5f5f8-c1b3-4113-9b32-9f253df15b2f" />
 Backtest & Analyze: Run Cell 19 to execute the historical backtest, generate the performance report, plot the equity curve, and run baseline comparisons.
 Train ML Models (Optional): Run Cell 19c to build the dataset, train the Gradient Boosting models, and run a clean out-of-sample test.
 Go Live (Paper): Run Cell 20 to start the live paper trading engine. It will wait for candle closes, execute trades based on your chosen model, and save the state to account_state.json. Press Ctrl+C to stop safely.
