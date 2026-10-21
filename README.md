@@ -49,3 +49,29 @@ Run the first cell to install required packages:
 ```python
 !pip install -q -U transformers accelerate yfinance scikit-learn joblib
 # Optional: !pip install -q pysocks (if using a SOCKS5 proxy for Bybit)
+```
+
+### 2. Configure API Secrets (Optional but Recommended)
+If you want to use Bybit's live tokenized stock data instead of the yfinance proxy, add the following to your Google Colab Secrets (🔑 icon in the left pane):
+- BYBIT_API_KEY
+- BYBIT_API_SECRET
+- PROXY_URL or RELAY_URL (Bybit geo-blocks standard Colab IPs; a proxy or relay is required for direct Bybit access).
+  
+### 3. Configure the Engine
+Edit the CONFIG dictionary in Cell 2 to suit your strategy:
+```python
+CONFIG = {
+    "DATA_PROVIDER": "auto",       # "auto", "bybit", or "yfinance"
+    "MARKET_MODE": "spot_tokenized_stock",
+    "MODEL_MODE": "rule",          # "rule", "ml", "llm", "endpoint", "random"
+    "UNIVERSE_MODE": "fixed",      # "fixed" or "tokenized_stocks"
+    "START_BALANCE": 1000.0,
+    # ... plus risk limits, ATR multipliers, and fee structures
+}
+```
+
+###🏃 Running the Project
+Initialize & Select Universe: Run Cells 1 through 18. Cell 18 will validate your stock universe (e.g., NVDA, TSLA, AAPL) against the active data provider.
+Backtest & Analyze: Run Cell 19 to execute the historical backtest, generate the performance report, plot the equity curve, and run baseline comparisons.
+Train ML Models (Optional): Run Cell 19c to build the dataset, train the Gradient Boosting models, and run a clean out-of-sample test.
+Go Live (Paper): Run Cell 20 to start the live paper trading engine. It will wait for candle closes, execute trades based on your chosen model, and save the state to account_state.json. Press Ctrl+C to stop safely.
