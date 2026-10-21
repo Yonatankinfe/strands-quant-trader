@@ -70,7 +70,7 @@ CONFIG = {
 }
 ```
 
-###🏃 Running the Project
+### 4  Running the Project
 Initialize & Select Universe: Run Cells 1 through 18. Cell 18 will validate your stock universe (e.g., NVDA, TSLA, AAPL) against the active data provider.
 Backtest & Analyze: Run Cell 19 to execute the historical backtest, generate the performance report, plot the equity curve, and run baseline comparisons.
 Train ML Models (Optional): Run Cell 19c to build the dataset, train the Gradient Boosting models, and run a clean out-of-sample test.
